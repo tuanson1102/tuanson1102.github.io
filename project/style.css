@@ -1,0 +1,28 @@
+.tong {
+    width: 1000px;
+    margin: auto;
+    /* text-align: center; */
+}
+
+.hearder {text-align: center;}
+
+.main-heading {
+    display: flex;
+}
+
+.sub-main {text-align: center;width: 50%;}
+
+.images {
+    width: 25%;
+}
+
+.footer {display: flex;flex-direction: unset;}
+.date {
+    width: 50%;
+    text-align: center;
+}
+
+.dau {
+    width: 50%;
+    text-align: center;
+}
