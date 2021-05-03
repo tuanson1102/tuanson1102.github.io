@@ -1,5 +1,5 @@
 *{
-    margin: 0;
+    margin: auto;
     padding: 0;
     box-sizing: border-box;
 }
@@ -7,7 +7,9 @@
     display: flex;
 }
 .all{
-    height: 1000px;
+    height: 2700px;
+    background-color: black;
+    
 }
 .main-items{
     list-style: none;
@@ -72,24 +74,132 @@ li.sub-option-2:hover{
 li.sub-menu-1:hover .sub-items-2{
     display: block;
 }
-img {
-    width: 70px;
-}
+
 
 .back-top {
     position: fixed;
     bottom: 15px;
     right: 15px;
 }  
-img.content-images {
-    width: 200px;
+.back{
+    width: 70px;
+}
+.banner {
+    text-align: center;
+    padding-top: 71px;
+}
+h1 {
+    color: #FEA;
+    text-align: center;
+    margin-top: 20px;
 }
 
-.content-main {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 435px;
+.line {
+    height: 2px;
+    background-color: brown;
+    margin-top: 5px;
 }
+.items {
+    display: flex;
+}
+
+.sub-items {
+    flex-grow: 1;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+p {
+    color: #fff;
+    font-size: xxx-large;
+}
+.imgs:hover{
+    
+    animation: watch 1s infinite;
+
+
+}
+@keyframes watch {
+    0%{
+
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
+
+
+/* phan items */
+.item {
+    width: 32.3%;
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+}
+
+.orange {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #babd03;
+    opacity: 0;
+}
+
+.item:hover .orange {
+    animation: opacity-increa 1.5s forwards;
+}
+
+@keyframes opacity-increa {
+    0%{
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+.icon-top {
+    position: absolute;
+    top: 250px;
+    left: -200px;
+    color: rgba(224, 19, 19, 0.986);
+    font-size: xx-large;
+}
+.item:hover .icon-top {
+    animation: di-tu-trai-sang 1.5s forwards;
+}
+@keyframes di-tu-trai-sang {
+    0%{
+    }
+    100%{
+        position: absolute;
+        top: 250px;
+        left: 160px;
+    }
+}
+
+.footer {
+    color: #FFF;
+    display: flex;
+    font-size: larger;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
 
 
