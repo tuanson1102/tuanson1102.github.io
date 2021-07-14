@@ -112,6 +112,7 @@ public class App {
             for (Player player : selectedTeam) {
                 System.out.println(player);
             }
+            break;
             case 3:
             while (gkSize < 1 ) {
                 int rdGK = general.nextInt(22);
