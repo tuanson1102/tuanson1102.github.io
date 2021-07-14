@@ -31,6 +31,6 @@ public class Player {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return + number+ "-"+ fullName + "-" + position ;
+        return number+ "-"+ fullName + "-" + position ;
     }
 }
