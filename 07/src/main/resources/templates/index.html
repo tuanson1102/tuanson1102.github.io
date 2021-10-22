@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <head th:replace="template::head"> </head>
+</head>
+
+<body>
+  <div class="navBar" th:replace="template::navBar"></div>
+  <div class="context" align="center">
+  
+    <table class="table table-striped w-auto">
+      <thead class="bg-success text-white" style="background-color: rgb(255, 131, 127);">
+        <tr style="text-align: center">
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>More detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="employee: ${employees}">
+          <td th:text="${employee.first_name}"></td>
+          <td th:text="${employee.last_name}"></td>
+          <td><a th:href="@{/{id}(id=${employee.id})}" class="btn btn-primary" style="background-color: lightskyblue" >Access</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="script" th:replace="template::script"></div>
+</body>
+
+</html>

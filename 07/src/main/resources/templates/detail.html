@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <head th:replace="template::head"> </head>
+</head>
+
+<body>
+  <div class="navBar" th:replace="template::navBar"></div>
+  <div class="context" align="center">
+    <h1 style="font-weight: bold;">Họ và tên</h1>
+    <h1 th:text="${employee.first_name + employee.last_name}"></h1><br>
+    <p style="font-weight: bold;">Địa chỉ email</p>
+    <p th:text="${employee.email}">
+    <p style="font-weight: bold;"> Số ID</p>
+    <p th:text="${employee.id_card}">ID number</p><br>
+    
+    <a th:href="@{/edit/{id}(id=${employee.id})}"><button type="button" class="btn btn-primary" style="background-color: burlywood;">Edit</button></a>
+    <a th:href="@{/delete/{id}(id=${employee.id})}"><button type="button" class="btn btn-primary" style="background-color: black;" >Delete</button></a>
+    <a th:href="@{/}"><button type="button" class="btn btn-primary" style="background-color: red;">Cancel</button></a>
+    
+  </div>
+
+</html>

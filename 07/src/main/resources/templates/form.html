@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="template::head"> </head>
+
+<body>
+  <div class="navBar" th:replace="template::navBar"></div>
+  <div class="context" align="center">
+    <form action="#" th:action="@{/save}" th:object="${employee}" method="post" novalidate="novalidate">
+      <input type="hidden" placeholder="id" th:field="*{id}" /><br><br>
+      <input type="text" placeholder="First Name" th:field="*{first_name}" /><br><br>
+      <input type="text" placeholder="Last Name" th:field="*{last_name}" /><br><br>
+      <input type="text" placeholder="Email" th:field="*{email}" /><br><br>
+      <input type="text" placeholder="Id Card" th:field="*{id_card}" /><br><br>
+      <a><button type="submit" class="btn btn-primary" style="background-color: green;">Save</button></a>
+      <a th:href="@{/}"><button type="button" class="btn btn-primary" style="background-color: red;">Cancel</button></a>
+
+
+  </div>
+  </form>
+</body>
+
+</html>

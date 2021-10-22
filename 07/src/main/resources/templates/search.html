@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="template::head"> </head>
+
+<body>
+  <div class="navBar" th:replace="template::navBar"></div>
+  <div class="context" align="center">
+    <br></br>
+    <form action="#" th:action="@{/search}" method="post" novalidate="novalidate" th:object="${searchrequest}">
+      <input type="text" th:field="*{keyword}" placeholder="Search everything" /><br><br>
+      <a><button type="submit" class="btn btn-primary" >Search</button></a>
+    </form>
+  </div>
+</body>
+
+</html>
