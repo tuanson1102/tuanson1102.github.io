@@ -24,16 +24,11 @@ public class ThymeController {
 
     @GetMapping(value = { "/", "/home" })
     public String getHome(Model model) {
-        model.addAttribute("title", "Homepage");
+        model.addAttribute("title", "List of Employee");
+        model.addAttribute("list", employeeDAO.getAll());
         return "index";
     }
 
-    @GetMapping("/list")
-    public String getEmpList(Model model) {
-        model.addAttribute("title", "List of Employee");
-        model.addAttribute("list", employeeDAO.getAll());
-        return "list";
-    }
 
     @GetMapping("/view/{id}")
     public String empView(@PathVariable(value = "id") int ID, Model model) {
@@ -64,10 +59,10 @@ public class ThymeController {
     @PostMapping("/edited")
     public String empEdit(@ModelAttribute(value = "emp") Employee editedEmployee, BindingResult result) {
         employeeDAO.update(editedEmployee);
-        return "redirect:/list";
+        return "redirect:/";
     }
 
-    @GetMapping("/create")
+    @GetMapping("/add")
     public String empCreateForm(Model model) {
         model.addAttribute("title", "Create new Employee");
         model.addAttribute("emp", new Employee());
@@ -80,7 +75,7 @@ public class ThymeController {
             return "add";
         }
         employeeDAO.add(newEmployee);
-        return "redirect:/list";
+        return "redirect:/";
     }
 
     @GetMapping("/delete/{id}")
@@ -97,7 +92,7 @@ public class ThymeController {
     @PostMapping("/delete")
     public String empDelete(@ModelAttribute(value = "emp") Employee deletedEmployee, BindingResult result) {
         employeeDAO.delete(deletedEmployee);
-        return "redirect:/list";
+        return "redirect:/";
     }
 
     @GetMapping("/search")

@@ -10,17 +10,17 @@
 				<table class="table table-striped w-auto">
 					<tbody>
 						<tr class="text-center">
-							<td colspan="3"><span class="text-capitalize fw-bold">Search by:</span></td>
+							<td colspan="3"><span class="text-capitalize fw-bold">Search:</span></td>
 						</tr>
 						<tr>
+							<td><input type="text" placeholder="Your keyword" th:field="*{keyword}" /></td>
 							<td>
 								<select class="form-control input-mini" th:field="*{field}" required>
-									<option value="">--Select Field--</option>
-									<option value="email">Email</option>
-									<option value="name">Name</option>
+									<option value="">--Select Order--</option>
+									<option value="inc">name</option>
+									<option value="desc">emailID</option>
 								</select>
 							</td>
-							<td><input type="text" placeholder="Your keyword" th:field="*{keyword}" /></td>
 							<td>
 								<select class="form-control input-mini" th:field="*{order}" required>
 									<option value="">--Select Order--</option>
@@ -31,7 +31,7 @@
 						</tr>
 					</tbody>
 				</table>
-				<button type="submit" class="btn btn-sm btn-primary">Submit</button>
+				<button type="submit" class="btn btn-sm btn-primary">search</button>
 			</form>
 			<br />
 			<h1>List of Employee</h1>

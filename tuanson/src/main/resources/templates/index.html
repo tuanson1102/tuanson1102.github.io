@@ -5,22 +5,43 @@
 	<body>
 		<div class="navBar" th:replace="template::navBar"></div>
 		<div class="context" align="center">
-			<table class="table table-striped w-auto">
-				<thead class="bg-success text-white" style="background-color: rgb(255, 131, 127);">
-				  <tr style="text-align: center">
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>More detail</th>
-				  </tr>
+			<br />
+			<div>
+				<h1>List of Employee</h1>
+			</div>
+			<br />
+			<table class="table table-striped w-auto" th:object="${list}">
+				<thead class="bg-success text-white">
+					<tr style="text-align: center">
+						<th>Full Name</th>
+						<th>Email</th>
+						<th>Passport Number</th>
+						<th colspan="3"></th>
+					</tr>
 				</thead>
 				<tbody>
-				  <tr th:each="emp : ${list}">
-					<td th:text="${emp.firstName}"></td>
-					<td th:text="${emp.lastName}"></td>
-					<td><a th:href="@{/{id}(id=${emp.id})}" class="btn btn-primary" style="background-color: lightskyblue" >Access</a></td>
-				  </tr>
+					<tr th:each="emp : ${list}">
+						<td th:text="${emp.fullName}"></td>
+						<td th:text="${emp.emailID}"></td>
+						<td th:text="${emp.passportNumber}"></td>
+						<td>
+							<a class="btn btn-warning btn-sm" th:href="@{/edit/{id}(id = ${emp.id})}" role="button"
+								style="background-color:blue">Edit</a
+							>
+						</td>
+						<td>
+							<a class="btn btn-danger btn-sm" th:href="@{/delete/{id}(id = ${emp.id})}" role="button"
+								>Delete</a
+							>
+						</td>
+						<td>
+							<a class="btn btn-info btn-sm" th:href="@{/view/{id}(id = ${emp.id})}" role="button"
+								>Info</a
+							>
+						</td>
+					</tr>
 				</tbody>
-			  </table>
+			</table>
 		</div>
 		<div class="script" th:replace="template::script"></div>
 	</body>
